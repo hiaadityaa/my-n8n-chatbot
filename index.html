@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY Academy | Student Enquiry Assistant</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css"
+        rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fc;
+      color: #243047;
+    }
+
+    header {
+      background: #263d78;
+      color: white;
+      padding: 45px 20px;
+      text-align: center;
+    }
+
+    header h1 { font-size: 36px; }
+
+    main {
+      max-width: 900px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+
+    .intro, .course {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 12px #0000000d;
+    }
+
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .course { border-top: 4px solid #536de0; }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #68738a;
+    }
+
+    :root {
+      --chat--color--primary: #536de0;
+      --chat--color--secondary: #263d78;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to MY Academy</h1>
+    <p>Learn new skills and explore your future.</p>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Our Student Enquiry Assistant</h2>
+      <p>
+        Have questions about our courses?
+        Click the chat button at the bottom-right
+        to speak with our AI assistant.
+      </p>
+    </section>
+
+    <h2>Available Courses</h2>
+
+    <div class="courses">
+      <section class="course">
+        <h3>Python Basics</h3>
+        <p>Explore the fundamentals of Python programming.</p>
+      </section>
+
+      <section class="course">
+        <h3>Data Engineering Basics</h3>
+        <p>Explore introductory data engineering concepts.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    MY Academy | AI Student Enquiry Assistant
+  </footer>
+
+  <script type="module">
+    import { createChat } from
+      'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+    createChat({
+      webhookUrl:
+        'https://aadityaak.app.n8n.cloud/webhook/f239b4b2-2098-493c-80fe-69707aee485a/chat',
+      mode: 'window',
+      showWelcomeScreen: false,
+      initialMessages: [
+        'Hello! Welcome to MY Academy.',
+        'How can I help you today?'
+      ],
+      i18n: {
+        en: {
+          title: 'MY Academy Assistant',
+          subtitle: 'Ask about our courses',
+          inputPlaceholder: 'Type your question...',
+          getStarted: 'Start Chat',
+          footer: ''
+        }
+      }
+    });
+  </script>
+</body>
+</html>
